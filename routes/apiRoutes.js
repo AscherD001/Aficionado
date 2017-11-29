@@ -9,7 +9,7 @@ module.exports = function(app) {
     });
     app.get("/api/:query", function(req, res) {
         var queryURL = "https://www.rijksmuseum.nl/api/en/collection/" + 
-            "?key=nRpUKIg0&format=json&ps=100&imgonly=True&q=" + req.params.query;
+            "?key=<Your Key>&format=json&ps=100&imgonly=True&q=" + req.params.query;
         console.log(req.params.query);
         if(req.params.query != "default") {
             request(queryURL, function(err, response, body) {
@@ -18,7 +18,7 @@ module.exports = function(app) {
             });
         } else {
             queryURL = "https://www.rijksmuseum.nl/api/en/collection/" + 
-            "?key=nRpUKIg0&format=json&ps=100&imgonly=True&q=van%20gogh";
+            "?key=<Your Key>&format=json&ps=100&imgonly=True&q=van%20gogh";
             request(queryURL, function(err, response, body) {
                 var data = JSON.parse(body);
                 res.json(data);
@@ -76,17 +76,3 @@ module.exports = function(app) {
     });
     
 }
-
-
-
-
-
-
-
-//     var text = 'Hello RSA!';
-//     var encrypted = key.encrypt(text, 'base64');
-//     console.log('encrypted: ', encrypted);
-//     var decrypted = key.decrypt(encrypted, 'utf8');
-//     console.log('decrypted: ', decrypted);
-
-// https://www.rijksmuseum.nl/api/en/collection/?key=nRpUKIg0&format=json&ps=10&imgonly=True&q=

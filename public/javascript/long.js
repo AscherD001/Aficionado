@@ -5,7 +5,7 @@ $("#title").mouseover(function(){
   function showDescription() {    
     descriptionState = true;
     if(descriptionState) {
-      var description = $("<div id='description'>Aficionado is an application that allows users to search and display over 200,000 art masterpieces from the Dutch national museum. Aficionado was developed by Clay Crawley, Daniel Ascher, Long Nguyen, and Lloyd Charles using the Rijksmuseum API.  All art is from the Rijksmuseum Collection. </div>");
+      var description = $("<div id='description'>Aficionado is an application that allows users to search and display over 200,000 art masterpieces from the Dutch national museum. Aficionado was developed by Daniel Ascher, Long Nguyen, Clay Crawley, and Lloyd Charles using the Rijksmuseum API.  All art is from the Rijksmuseum Collection. </div>");
       $("#title").append(description);  
         var descriptionDrop = setInterval(function() {
           var descriptionHeight = parseInt($("#description").css("height"));
